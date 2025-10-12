@@ -1,5 +1,5 @@
 export interface RegisterITF {
-  username: string;
+  name: string;
   email: string;
   password: string;
 }

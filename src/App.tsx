@@ -2,13 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import InputGroup from './component/InputGroup'
 import Divider from './component/Divider'
-import { Register, Login } from './lib/LoginOrRegister'
+import { Register, Login } from './lib/service'
 
 function App() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
   const [responseMessage, setResponseMessage] = useState('')
   let response;
 
@@ -23,7 +23,7 @@ function App() {
       response = await Login({ email, password })
 
     } else {
-      response = await Register({ email, password, username })
+      response = await Register({ email, password, name })
     }
 
     console.log("response",response)
@@ -45,7 +45,7 @@ function App() {
             {swap ?
               <div></div>
               :
-              <InputGroup name='username' label='Username' handleChange={setUsername} value={username} type='text' />
+              <InputGroup name='username' label='Username' handleChange={setName} value={name} type='text' />
             }
             <InputGroup name='email' label='Email Address' handleChange={setEmail} value={email} type='email' />
             <InputGroup name='password' label='Password' handleChange={setPassword} value={password} type='password' />
