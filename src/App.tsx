@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import InputGroup from './component/InputGroup'
 import Divider from './component/Divider'
@@ -30,6 +30,13 @@ function App() {
 
     setResponseMessage(response?.message)
   }
+
+  useEffect(() => {
+
+    setName('')
+    setPassword('')
+    setEmail('')
+  }, [swap])
 
   return (
     <div className='flex justify-between items-center'>
