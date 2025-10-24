@@ -9,9 +9,9 @@ function InputGroup({ name, type, value, label, handleChange }: InputGroupType) 
 
     return (
         <div className='mt-2'>
-            <label htmlFor="email">{label}</label>
+            <label htmlFor={name}>{label}</label>
             <div className='mt-1'>
-                <input onChange={handleChangeValue} name={name} value={value} type={type} className='rounded border border-white w-[100%] h-10 px-2 py-1' />
+                <input aria-label={name} onChange={handleChangeValue} name={name} value={value} type={type} className='rounded border border-white w-[100%] h-10 px-2 py-1' />
             </div>
         </div >
     )
